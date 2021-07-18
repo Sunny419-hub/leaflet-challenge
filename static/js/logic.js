@@ -89,17 +89,18 @@ function createMap(earthquakes) {
           grades = [-10, 10, 30, 50, 70, 90],
           labels = [];
 
-  // loop through our density intervals and generate a label with a colored square for each interval
-  for (var i = 0; i < grades.length; i++) {
-      div.innerHTML +=
-          '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-          grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
-  }
+        // loop through our density intervals and generate a label with a colored square for each interval
+        for (var i = 0; i < grades.length; i++) {
+            div.innerHTML +=
+                '<div style="background:' + getColor(grades[i] + 1) + '">&nbsp;</div> ' +
+                grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+                console.log(div.innerHTML);
+        }
 
-  return div;
-};
+        return div;
+    };
 
-legend.addTo(myMap);
+    legend.addTo(myMap);
 
   // Create a layer control
   // Pass in our baseMaps and overlayMaps
